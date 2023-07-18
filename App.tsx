@@ -2,8 +2,7 @@ import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
-
-import { MainStack } from './src/navigation/mainStack';
+import { MainStack } from '@navigation/MainStack';
 
 function App(): JSX.Element {
   return (
