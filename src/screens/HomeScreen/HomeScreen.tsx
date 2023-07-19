@@ -5,7 +5,7 @@ import strings from '@strings/strings.json';
 
 const HomeScreen = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 2 }}>
       <Text>{strings.home.headline}</Text>
 
       {/* remove the line and json import breaks WTF xD */}
