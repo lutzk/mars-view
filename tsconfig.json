@@ -1,13 +1,32 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    // strictBindCallApply,
+    // strictFunctionTypes,
+    // strictNullChecks,
+    // strictPropertyInitialization
+    "useUnknownInCatchVariables": true,
     "baseUrl": ".",
+
     "paths": {
       "@components/*": ["./src/components/*"],
       "@navigation/*": ["./src/navigation/*"],
       "@screens/*": ["./src/screens/*"],
-      "@strings/*": ["./src/strings/*"],
+      "@strings/*": ["./src/strings/*"]
     }
-  },
-  
+  }
 }
