@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 
 import strings from '@strings/strings.json';
 
-const HomeScreen: React.FC = () => {
+const HomeScreen = () => {
   return (
     <View style={{ flex: 1 }}>
       <Text>{strings.home.headline}</Text>
