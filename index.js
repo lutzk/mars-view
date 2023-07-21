@@ -1,5 +1,5 @@
 if (__DEV__) {
-  import('./src/config/reactotronConfig').then(() =>
+  void import('./src/config/reactotronConfig').then(() =>
     console.log('Reactotron Configured'),
   );
 }

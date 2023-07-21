@@ -11,9 +11,7 @@ import {
 const HomeScreen = () => {
   const dispatch = useAppDispatch();
   React.useEffect(() => {
-    dispatch(fetchRoverManifestByName(RoverNames.Spirit)).then(r =>
-      console.tron.log?.(r.payload),
-    );
+    void dispatch(fetchRoverManifestByName(RoverNames.Spirit));
   });
   fetchRoverManifestByName(RoverNames.Spirit);
 

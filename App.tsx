@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, Text, View } from 'react-native';
 // workaround for https://github.com/rt2zz/redux-persist/issues/1166
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { persistReducer as _persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
