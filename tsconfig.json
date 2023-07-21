@@ -26,7 +26,10 @@
       "@components/*": ["./src/components/*"],
       "@navigation/*": ["./src/navigation/*"],
       "@screens/*": ["./src/screens/*"],
-      "@strings/*": ["./src/strings/*"]
+      "@strings/*": ["./src/strings/*"],
+      "@store/*": ["./src/store/*"],
+      "@api/*": ["./src/api/*"],
+      "@config/*": ["./src/config/*"]
     }
   }
 }

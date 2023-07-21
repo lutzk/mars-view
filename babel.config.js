@@ -10,6 +10,9 @@ module.exports = {
           '@navigation': './src/navigation',
           '@screens': './src/screens',
           '@strings': './src/strings',
+          '@store': './src/store',
+          '@api': './src/api',
+          '@config': './src/config'
         },
       },
     ],
