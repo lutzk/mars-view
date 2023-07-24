@@ -9,6 +9,8 @@ import {
 } from '@store/features/rovers/roverSlice';
 import { RoverCard } from './components/Rovercard';
 
+import { styles } from './homeScreenStyles';
+
 const HomeScreen = () => {
   const dispatch = useAppDispatch();
   React.useEffect(() => {
@@ -28,7 +30,7 @@ const HomeScreen = () => {
   );
 
   return (
-    <View style={{ flex: 2 }}>
+    <View style={styles.container}>
       <Text>{strings.home.headline}</Text>
       {spirit && <RoverCard manifest={spirit} />}
       {opportunity && <RoverCard manifest={opportunity} />}

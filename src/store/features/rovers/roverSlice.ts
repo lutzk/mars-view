@@ -7,6 +7,12 @@ enum RoverNames {
   Spirit = 'spirit',
 }
 
+const WikiUrls = {
+  [RoverNames.Spirit]: 'https://en.wikipedia.org/wiki/Spirit_(rover)',
+  [RoverNames.Curiosity]: 'https://en.wikipedia.org/wiki/Curiosity_(rover)',
+  [RoverNames.Opportunity]: 'https://en.wikipedia.org/wiki/Opportunity_(rover)',
+};
+
 type RoverManifests = {
   [key in RoverNames]?: RoverManifest;
 };
@@ -53,6 +59,7 @@ export const RoverSlice = createSlice({
         max_sol,
         max_date,
         total_photos,
+        wikiUrl: WikiUrls[action.meta.arg],
       };
     });
   },

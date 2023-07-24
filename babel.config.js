@@ -12,7 +12,9 @@ module.exports = {
           '@strings': './src/strings',
           '@store': './src/store',
           '@api': './src/api',
-          '@config': './src/config'
+          '@config': './src/config',
+          '@styleguide': './src/styleguide',
+          '@utils': './src/utils'
         },
       },
     ],

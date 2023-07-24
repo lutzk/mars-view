@@ -28,7 +28,7 @@ export type RoverManifest = {
     earth_date: string;
     total_photos: number;
   }>;
-};
+} & { wikiUrl?: string };
 export type RoverManifestResponse = {
   photo_manifest: RoverManifest;
 };
