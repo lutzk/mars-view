@@ -36,7 +36,24 @@ export const RoverSlice = createSlice({
   extraReducers: builder => {
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(fetchRoverManifestByName.fulfilled, (state, action) => {
-      state.roversManifests.spirit = action.payload;
+      const {
+        name,
+        status,
+        landing_date,
+        launch_date,
+        max_date,
+        max_sol,
+        total_photos,
+      } = action.payload.photo_manifest;
+      state.roversManifests[action.meta.arg] = {
+        name,
+        status,
+        landing_date,
+        launch_date,
+        max_sol,
+        max_date,
+        total_photos,
+      };
     });
   },
 });

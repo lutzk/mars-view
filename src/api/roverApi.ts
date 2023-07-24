@@ -14,25 +14,27 @@ const axiosClient = axios.create({
 });
 
 type MissionStatus = 'complete' | 'running';
+
 export type RoverManifest = {
-  photo_manifest: {
-    landing_date: string;
-    launch_date: string;
-    status: MissionStatus;
-    max_sol: number;
-    max_date: string;
+  landing_date: string;
+  launch_date: string;
+  status: MissionStatus;
+  max_sol: number;
+  max_date: string;
+  total_photos: number;
+  name: RoverNames;
+  photos?: Array<{
+    sol: number;
+    earth_date: string;
     total_photos: number;
-    name: RoverNames;
-    photos: Array<{
-      sol: number;
-      earth_date: string;
-      total_photos: number;
-    }>;
-  };
+  }>;
+};
+export type RoverManifestResponse = {
+  photo_manifest: RoverManifest;
 };
 const roverAPI = {
   fetchRoverManifestByName: (roverName: RoverNames) =>
-    axiosClient.get<RoverManifest>(`${roverManifestUrl}${roverName}`, {
+    axiosClient.get<RoverManifestResponse>(`${roverManifestUrl}${roverName}`, {
       params: { api_key: API_KEY },
     }),
 };
