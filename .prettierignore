@@ -204,4 +204,5 @@ ios
 
 # testing
 /coverage
+jest.setup.js
 
