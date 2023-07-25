@@ -23,3 +23,7 @@ jest.mock('react-native/Libraries/Utilities/BackHandler', () => {
     'react-native/Libraries/Utilities/__mocks__/BackHandler.js',
   );
 });
+
+// jest.afterEach(() => {
+//   jest.clearAllMocks();
+// });
