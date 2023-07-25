@@ -3,25 +3,40 @@ import { Colors } from './Colors';
 const Headline = {
   fontSize: 24,
   fontWeight: 'bold',
-  color: Colors.textColor,
+  color: Colors.darkGrey,
 } as const;
 
 const SubHeadline = {
   fontSize: 20,
-  fontWeight: 'bold',
-  color: Colors.textColor,
+  fontWeight: 'normal',
+  color: Colors.darkGrey,
 } as const;
 
 const Text = {
   fontSize: 16,
+  fontWeight: 'normal',
+  color: Colors.darkGrey,
+} as const;
+
+const TextBold = {
+  ...Text,
   fontWeight: 'bold',
-  color: Colors.textColor,
+} as const;
+
+const LinkText = {
+  ...Text,
+  color: Colors.appMain,
+  textDecorationLine: 'underline',
+  textDecorationColor: Colors.appMain,
 } as const;
 
 const FontStyles = {
   Headline,
   SubHeadline,
+
   Text,
+  TextBold,
+  LinkText,
 };
 
 export { FontStyles };

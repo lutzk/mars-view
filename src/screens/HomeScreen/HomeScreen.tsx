@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 
 import strings from '@strings/strings.json';
 import { useAppDispatch, useAppSelector } from '@store/hooks';
@@ -30,14 +30,14 @@ const HomeScreen = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text>{strings.home.headline}</Text>
       {spirit && <RoverCard manifest={spirit} />}
       {opportunity && <RoverCard manifest={opportunity} />}
       {curiosity && <RoverCard manifest={curiosity} />}
       {/* remove the line and json import breaks WTF xD - use i18n */}
       <Text></Text>
-    </View>
+    </ScrollView>
   );
 };
 

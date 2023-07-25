@@ -1,7 +1,8 @@
 const Colors = {
-  appMain: '#fa4d02',
-  textColor: '#212121',
-  cardBGColor: '#e8e1d8',
+  appMain: '#D84315',
+  darkGrey: '#212121',
+  lightRed: '#f6c2ac',
+  lightSand: '#fff0eb',
 } as const;
 
 export { Colors };

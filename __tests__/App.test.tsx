@@ -8,6 +8,10 @@ import { it, expect } from '@jest/globals';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
+/**
+ * https://github.com/react-navigation/react-navigation/issues/10943
+ */
+
 const sleep = (ms: number) =>
   new Promise(resolve => setTimeout(() => resolve(true), ms));
 

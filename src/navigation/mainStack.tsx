@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '@screens/HomeScreen/HomeScreen';
+import { Colors } from '@styleguide/Colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,7 +11,7 @@ const MainStack = () => (
     screenOptions={{
       headerShown: false,
       contentStyle: {
-        backgroundColor: '#c2b09b',
+        backgroundColor: Colors.lightSand,
       },
     }}>
     <Stack.Screen name="Home" component={HomeScreen} />

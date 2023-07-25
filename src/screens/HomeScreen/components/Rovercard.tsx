@@ -11,19 +11,36 @@ type RoverCardProps = { manifest: RoverManifest };
 const RoverCard: FC<RoverCardProps> = ({ manifest }) => {
   return (
     <View style={styles.cardContainer}>
-      <Text style={styles.cardHeader}>{manifest.name}</Text>
-      <Text>landing date: {manifest.landing_date}</Text>
-      <Text>status: {manifest.status}</Text>
-      <Text>launch date: {manifest.launch_date}</Text>
-      <Text>max date: {manifest.max_date}</Text>
-      <Text>max sol: {manifest.max_sol}</Text>
-      <Text>total photos: {manifest.total_photos}</Text>
-      {manifest.wikiUrl && (
-        // its checked above not sure why it complains
-        <TouchableOpacity onPress={() => void openLink(manifest.wikiUrl!)}>
-          <Text>{manifest.name} on wikipedia</Text>
-        </TouchableOpacity>
-      )}
+      <View>
+        <Text style={styles.cardHeader}>{manifest.name}</Text>
+        <Text>
+          landing date:
+          <Text style={styles.value}>{manifest.landing_date}</Text>
+        </Text>
+        <Text>
+          status: <Text style={styles.value}>{manifest.status}</Text>
+        </Text>
+        <Text>
+          launch date: <Text style={styles.value}>{manifest.launch_date}</Text>
+        </Text>
+        <Text>
+          max date: <Text style={styles.value}>{manifest.max_date}</Text>
+        </Text>
+        <Text>
+          max sol: <Text style={styles.value}>{manifest.max_sol}</Text>
+        </Text>
+        <Text>
+          total photos:
+          <Text style={styles.value}>{manifest.total_photos}</Text>
+        </Text>
+
+        {manifest.wikiUrl && (
+          // its checked above not sure why it complains
+          <TouchableOpacity onPress={() => void openLink(manifest.wikiUrl!)}>
+            <Text style={styles.link}>{manifest.name} on wikipedia</Text>
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
 };

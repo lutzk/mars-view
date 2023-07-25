@@ -5,12 +5,26 @@ import { SafeAreaView, StatusBar, Text, View } from 'react-native';
 import { persistReducer as _persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { persistor, store } from '@store/store';
+import { Colors } from '@styleguide/Colors';
 
 type AppProviderProps = {
   children?: React.ReactNode;
 };
+
+const appTheme = {
+  ...DefaultTheme,
+  colors: {
+    primary: 'rgb(216, 67, 21)',
+    background: 'rgb(255, 240, 235)',
+    card: 'rgb(255, 255, 255)',
+    text: 'rgb(28, 28, 30)',
+    border: 'rgb(199, 199, 204)',
+    notification: 'rgb(255, 69, 58)',
+  },
+};
+
 const AppProviders: FC<AppProviderProps> = ({ children }) => {
   return (
     <Provider store={store}>
@@ -21,11 +35,11 @@ const AppProviders: FC<AppProviderProps> = ({ children }) => {
           </View>
         }
         persistor={persistor}>
-        <NavigationContainer>
+        <NavigationContainer theme={appTheme}>
           <SafeAreaView style={{ flex: 1 }}>
             <StatusBar
-            // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-            // backgroundColor={backgroundStyle.backgroundColor}
+              barStyle={'dark-content'}
+              backgroundColor={Colors.appMain}
             />
 
             {children}
