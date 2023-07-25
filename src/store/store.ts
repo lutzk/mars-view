@@ -12,18 +12,23 @@ import {
 } from 'redux-persist';
 
 import RoverSlice from './features/rovers/roverSlice';
-import Reactotron from '../config/reactotronConfig';
+import Reactotron from '@config/reactotronConfig';
 import { persistConfig } from '@config/reduxPersistConfig';
+import { appConfig } from '@config/appConfig';
 
 const rootReducer = combineReducers({
   rovers: RoverSlice,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
+const reactotronEnhancer = appConfig.useReactotron
+  ? // @ts-ignore fix possible undef
+    [Reactotron().createEnhancer()]
+  : [];
+
 const store = configureStore({
   reducer: persistedReducer,
 
-  // @ts-ignore fix possible undef
-  enhancers: [Reactotron.createEnhancer()],
+  enhancers: reactotronEnhancer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {

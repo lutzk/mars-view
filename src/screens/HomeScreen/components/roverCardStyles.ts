@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   cardContainer: {
     flex: 1,
-    borderColor: '#f78705',
+    borderColor: Colors.appMain,
     borderWidth: 1,
     borderRadius: 5,
     padding: 20,
@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
   },
   cardHeader: {
     ...FontStyles.SubHeadline,
+    color: Colors.appMain,
   },
   label: {},
   value: {},

@@ -198,3 +198,4 @@ yarn-error.log
 # testing
 /coverage
 
+src/types/env.d.ts
