@@ -12,7 +12,9 @@ const RoverCard: FC<RoverCardProps> = ({ manifest }) => {
   return (
     <View style={styles.cardContainer}>
       <View>
-        <Text style={styles.cardHeader}>{manifest.name}</Text>
+        <Text style={styles.cardHeader} testID="cardHeader">
+          {manifest.name}
+        </Text>
         <Text>
           landing date:
           <Text style={styles.value}>{manifest.landing_date}</Text>

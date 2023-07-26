@@ -6,17 +6,13 @@ import App from '../src/App';
 import { it, expect } from '@jest/globals';
 
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react-native';
 
 /**
  * https://github.com/react-navigation/react-navigation/issues/10943
  */
 
-const sleep = (ms: number) =>
-  new Promise(resolve => setTimeout(() => resolve(true), ms));
-
-it('renders correctly', async () => {
-  const app = renderer.create(<App />).toJSON();
+it('renders correctly', () => {
+  const app = render(<App />).toJSON();
   expect(app).toMatchSnapshot();
-  await sleep(10);
 });

@@ -13,7 +13,7 @@ const axiosClient = axios.create({
   },
 });
 
-export type MissionStatus = 'complete' | 'running';
+export type MissionStatus = 'complete' | 'active';
 
 export type RoverManifest = {
   landing_date: string;

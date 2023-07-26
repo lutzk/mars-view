@@ -11,7 +11,6 @@
 
 //   return Reanimated;
 // });
-
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('@react-native-async-storage/async-storage', () =>
@@ -24,6 +23,20 @@ jest.mock('react-native/Libraries/Utilities/BackHandler', () => {
   );
 });
 
-// jest.afterEach(() => {
+jest.mock('redux-persist', () => {
+  const real = jest.requireActual('redux-persist');
+  return {
+    ...real,
+    persistReducer: jest
+      .fn()
+      .mockImplementation((config, reducers) => reducers),
+  };
+});
+
+
+// hangs
+// jest.useFakeTimers();
+
+// afterEach(() => {
 //   jest.clearAllMocks();
 // });

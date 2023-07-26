@@ -205,4 +205,4 @@ ios
 # testing
 /coverage
 jest.setup.js
-
+setupAfterEnv.js

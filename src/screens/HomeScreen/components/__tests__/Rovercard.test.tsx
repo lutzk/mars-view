@@ -5,7 +5,11 @@ import React from 'react';
 import { it, expect } from '@jest/globals';
 
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react-native';
+
+// imported to fix extendedmatchers types
+import '@testing-library/jest-native/';
+
 import { RoverCard } from '../Rovercard';
 import { MissionStatus } from '@api/roverApi';
 import { RoverNames } from '@store/features/rovers/roverSlice';
@@ -13,9 +17,6 @@ import { RoverNames } from '@store/features/rovers/roverSlice';
 /**
  * https://github.com/react-navigation/react-navigation/issues/10943
  */
-
-const sleep = (ms: number) =>
-  new Promise(resolve => setTimeout(() => resolve(true), ms));
 
 const MANIFEST_MOCK = {
   name: RoverNames.Spirit,
@@ -27,8 +28,13 @@ const MANIFEST_MOCK = {
   total_photos: 124550,
   wikiUrl: 'https://en.wikipedia.org/wiki/Spirit_(rover)',
 };
-it('renders correctly', async () => {
-  const app = renderer.create(<RoverCard manifest={MANIFEST_MOCK} />).toJSON();
+
+it('renders correctly', () => {
+  const app = render(<RoverCard manifest={MANIFEST_MOCK} />).toJSON();
+  const headline = screen.queryByTestId('cardHeader');
+  const wikiLink = screen.queryByText(`${RoverNames.Spirit} on wikipedia`);
+  expect(headline).toBeOnTheScreen();
+  expect(headline).toHaveTextContent(RoverNames.Spirit);
+  expect(wikiLink).toBeOnTheScreen();
   expect(app).toMatchSnapshot();
-  await sleep(10);
 });
