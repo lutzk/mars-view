@@ -17,12 +17,12 @@ module.exports = {
           '@components': './src/component',
           '@navigation': './src/navigation',
           '@screens': './src/screens',
-          '@strings': './src/strings',
           '@store': './src/store',
           '@api': './src/api',
           '@config': './src/config',
           '@styleguide': './src/styleguide',
-          '@utils': './src/utils'
+          '@utils': './src/utils',
+          '@i18n': './src/i18n'
         },
       },
     ],

@@ -9,6 +9,8 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { persistor, store } from '@store/store';
 import { Colors } from '@styleguide/Colors';
 
+import './i18n/i18n';
+
 type AppProviderProps = {
   children?: React.ReactNode;
 };
@@ -27,26 +29,28 @@ const appTheme = {
 
 const AppProviders: FC<AppProviderProps> = ({ children }) => {
   return (
-    <Provider store={store}>
-      <PersistGate
-        loading={
-          <View>
-            <Text>___load persist data____</Text>
-          </View>
-        }
-        persistor={persistor}>
-        <NavigationContainer theme={appTheme}>
-          <SafeAreaView style={{ flex: 1 }}>
-            <StatusBar
-              barStyle={'dark-content'}
-              backgroundColor={Colors.appMain}
-            />
+    <React.StrictMode>
+      <Provider store={store}>
+        <PersistGate
+          loading={
+            <View>
+              <Text>___load persist data____</Text>
+            </View>
+          }
+          persistor={persistor}>
+          <NavigationContainer theme={appTheme}>
+            <SafeAreaView style={{ flex: 1 }}>
+              <StatusBar
+                barStyle={'dark-content'}
+                backgroundColor={Colors.appMain}
+              />
 
-            {children}
-          </SafeAreaView>
-        </NavigationContainer>
-      </PersistGate>
-    </Provider>
+              {children}
+            </SafeAreaView>
+          </NavigationContainer>
+        </PersistGate>
+      </Provider>
+    </React.StrictMode>
   );
 };
 

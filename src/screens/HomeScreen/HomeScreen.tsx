@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { ScrollView, Text } from 'react-native';
-
-import strings from '@strings/strings.json';
 import { useAppDispatch, useAppSelector } from '@store/hooks';
 import {
   RoverNames,
@@ -10,8 +8,10 @@ import {
 import { RoverCard } from './components/Rovercard';
 
 import { styles } from './homeScreenStyles';
+import { useTranslation } from 'react-i18next';
 
 const HomeScreen = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   React.useEffect(() => {
     void Promise.all([
@@ -31,12 +31,10 @@ const HomeScreen = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text>{strings.home.headline}</Text>
+      <Text>{t('home.headline')}</Text>
       {spirit && <RoverCard manifest={spirit} />}
       {opportunity && <RoverCard manifest={opportunity} />}
       {curiosity && <RoverCard manifest={curiosity} />}
-      {/* remove the line and json import breaks WTF xD - use i18n */}
-      <Text></Text>
     </ScrollView>
   );
 };
