@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
 >
   <View>
     <Text>
-      welcome
+      home.headline
     </Text>
     <View
       style={
@@ -508,7 +508,6 @@ exports[`renders correctly 1`] = `
         </View>
       </View>
     </View>
-    <Text />
   </View>
 </RCTScrollView>
 `;
