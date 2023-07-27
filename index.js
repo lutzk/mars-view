@@ -9,4 +9,6 @@ import App from './src/App';
 import { name as appName } from './app.json';
 import { appConfig } from '@config/appConfig';
 
+import '@i18n/i18n';
+
 AppRegistry.registerComponent(appName, () => App);

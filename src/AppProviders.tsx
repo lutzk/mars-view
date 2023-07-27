@@ -9,8 +9,6 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { persistor, store } from '@store/store';
 import { Colors } from '@styleguide/Colors';
 
-import './i18n/i18n';
-
 type AppProviderProps = {
   children?: React.ReactNode;
 };
